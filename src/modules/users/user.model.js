@@ -34,10 +34,7 @@ const findByVerificationToken = async (verificationToken) => {
 
 const markEmailAsVerified = async (id) => {
     const sql = `
-        UPDATE users
-        SET is_verified = 1,
-            is_active = 1,
-            verification_token = NULL,
+        UPDATE users SET is_verified = 1, is_active = 1, verification_token = NULL,
             verification_expires = NULL
         WHERE id = ?
     `;

@@ -1,4 +1,4 @@
-const { logError } = require('../../shared/utils/logError');
+const { getErrorResponse, writeErrorLog } = require('../../shared/utils/handleError');
 
 const wantsHtml = (req) => {
     return req.headers.accept && req.headers.accept.includes('text/html');
@@ -106,10 +106,9 @@ const verifyEmailSuccess = (req, res, data) => {
 };
 
 const verifyEmailError = async (req, res, error) => {
-    const statusCode = error.statusCode || 500;
-    const message = error.message || 'Internal server error !!!';
+    const { statusCode, message } = getErrorResponse(error);
 
-    await logError('userController', error.stack || message);
+    await writeErrorLog('userController', error);
 
     if (wantsHtml(req)) {
         return res.status(statusCode).send(renderVerificationPage({
@@ -121,7 +120,7 @@ const verifyEmailError = async (req, res, error) => {
 
     return res.status(statusCode).json({
         success: false,
-        message: statusCode >= 500 ? 'Internal server error !!!' : message
+        message
     });
 };
 
