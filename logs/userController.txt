@@ -1,0 +1,74 @@
+[2026-05-23 19:02:52] TypeError: res.status(...).jsone is not a function
+    at register (D:\Web\6. Node js\MyLearning\Projects\ecommerce_web_api\src\modules\users\user.controller.js:4:21)
+    at Layer.handleRequest (D:\Web\6. Node js\MyLearning\Projects\ecommerce_web_api\node_modules\router\lib\layer.js:152:17)
+    at next (D:\Web\6. Node js\MyLearning\Projects\ecommerce_web_api\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\Web\6. Node js\MyLearning\Projects\ecommerce_web_api\node_modules\router\lib\route.js:117:3)
+    at handle (D:\Web\6. Node js\MyLearning\Projects\ecommerce_web_api\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\Web\6. Node js\MyLearning\Projects\ecommerce_web_api\node_modules\router\lib\layer.js:152:17)
+    at D:\Web\6. Node js\MyLearning\Projects\ecommerce_web_api\node_modules\router\index.js:295:15
+    at processParams (D:\Web\6. Node js\MyLearning\Projects\ecommerce_web_api\node_modules\router\index.js:582:12)
+    at next (D:\Web\6. Node js\MyLearning\Projects\ecommerce_web_api\node_modules\router\index.js:291:5)
+    at router.handle (D:\Web\6. Node js\MyLearning\Projects\ecommerce_web_api\node_modules\router\index.js:186:3)
+[2026-05-23 19:03:04] TypeError: res.status(...).jsonew is not a function
+    at register (D:\Web\6. Node js\MyLearning\Projects\ecommerce_web_api\src\modules\users\user.controller.js:4:21)
+    at Layer.handleRequest (D:\Web\6. Node js\MyLearning\Projects\ecommerce_web_api\node_modules\router\lib\layer.js:152:17)
+    at next (D:\Web\6. Node js\MyLearning\Projects\ecommerce_web_api\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\Web\6. Node js\MyLearning\Projects\ecommerce_web_api\node_modules\router\lib\route.js:117:3)
+    at handle (D:\Web\6. Node js\MyLearning\Projects\ecommerce_web_api\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\Web\6. Node js\MyLearning\Projects\ecommerce_web_api\node_modules\router\lib\layer.js:152:17)
+    at D:\Web\6. Node js\MyLearning\Projects\ecommerce_web_api\node_modules\router\index.js:295:15
+    at processParams (D:\Web\6. Node js\MyLearning\Projects\ecommerce_web_api\node_modules\router\index.js:582:12)
+    at next (D:\Web\6. Node js\MyLearning\Projects\ecommerce_web_api\node_modules\router\index.js:291:5)
+    at router.handle (D:\Web\6. Node js\MyLearning\Projects\ecommerce_web_api\node_modules\router\index.js:186:3)
+[2026-05-23 19:03:04] TypeError: res.status(...).jsonew is not a function
+    at register (D:\Web\6. Node js\MyLearning\Projects\ecommerce_web_api\src\modules\users\user.controller.js:4:21)
+    at Layer.handleRequest (D:\Web\6. Node js\MyLearning\Projects\ecommerce_web_api\node_modules\router\lib\layer.js:152:17)
+    at next (D:\Web\6. Node js\MyLearning\Projects\ecommerce_web_api\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\Web\6. Node js\MyLearning\Projects\ecommerce_web_api\node_modules\router\lib\route.js:117:3)
+    at handle (D:\Web\6. Node js\MyLearning\Projects\ecommerce_web_api\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\Web\6. Node js\MyLearning\Projects\ecommerce_web_api\node_modules\router\lib\layer.js:152:17)
+    at D:\Web\6. Node js\MyLearning\Projects\ecommerce_web_api\node_modules\router\index.js:295:15
+    at processParams (D:\Web\6. Node js\MyLearning\Projects\ecommerce_web_api\node_modules\router\index.js:582:12)
+    at next (D:\Web\6. Node js\MyLearning\Projects\ecommerce_web_api\node_modules\router\index.js:291:5)
+    at router.handle (D:\Web\6. Node js\MyLearning\Projects\ecommerce_web_api\node_modules\router\index.js:186:3)
+[2026-05-23 19:32:28] Error: Duplicate entry 'langofficial19+1@gmail.com' for key 'users.email'
+    at Object.register (D:\Web\6. Node js\MyLearning\Projects\ecommerce_web_api\src\modules\users\user.model.js:6:28)
+    at Object.register (D:\Web\6. Node js\MyLearning\Projects\ecommerce_web_api\src\modules\users\user.service.js:3:28)
+    at register (D:\Web\6. Node js\MyLearning\Projects\ecommerce_web_api\src\modules\users\user.controller.js:6:37)
+    at Layer.handleRequest (D:\Web\6. Node js\MyLearning\Projects\ecommerce_web_api\node_modules\router\lib\layer.js:152:17)
+    at next (D:\Web\6. Node js\MyLearning\Projects\ecommerce_web_api\node_modules\router\lib\route.js:157:13)
+    at D:\Web\6. Node js\MyLearning\Projects\ecommerce_web_api\src\modules\users\user.middleware.js:16:9
+    at Layer.handleRequest (D:\Web\6. Node js\MyLearning\Projects\ecommerce_web_api\node_modules\router\lib\layer.js:152:17)
+    at next (D:\Web\6. Node js\MyLearning\Projects\ecommerce_web_api\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\Web\6. Node js\MyLearning\Projects\ecommerce_web_api\node_modules\router\lib\route.js:117:3)
+    at handle (D:\Web\6. Node js\MyLearning\Projects\ecommerce_web_api\node_modules\router\index.js:435:11)
+[2026-05-23 19:34:01] Error: Duplicate entry 'langofficial19+1@gmail.com' for key 'users.email'
+    at Object.register (D:\Web\6. Node js\MyLearning\Projects\ecommerce_web_api\src\modules\users\user.model.js:6:28)
+    at Object.register (D:\Web\6. Node js\MyLearning\Projects\ecommerce_web_api\src\modules\users\user.service.js:3:28)
+    at register (D:\Web\6. Node js\MyLearning\Projects\ecommerce_web_api\src\modules\users\user.controller.js:6:37)
+    at Layer.handleRequest (D:\Web\6. Node js\MyLearning\Projects\ecommerce_web_api\node_modules\router\lib\layer.js:152:17)
+    at next (D:\Web\6. Node js\MyLearning\Projects\ecommerce_web_api\node_modules\router\lib\route.js:157:13)
+    at D:\Web\6. Node js\MyLearning\Projects\ecommerce_web_api\src\modules\users\user.middleware.js:16:9
+    at Layer.handleRequest (D:\Web\6. Node js\MyLearning\Projects\ecommerce_web_api\node_modules\router\lib\layer.js:152:17)
+    at next (D:\Web\6. Node js\MyLearning\Projects\ecommerce_web_api\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\Web\6. Node js\MyLearning\Projects\ecommerce_web_api\node_modules\router\lib\route.js:117:3)
+    at handle (D:\Web\6. Node js\MyLearning\Projects\ecommerce_web_api\node_modules\router\index.js:435:11)
+[2026-05-23 19:34:02] Error: Duplicate entry 'langofficial19+1@gmail.com' for key 'users.email'
+    at Object.register (D:\Web\6. Node js\MyLearning\Projects\ecommerce_web_api\src\modules\users\user.model.js:6:28)
+    at Object.register (D:\Web\6. Node js\MyLearning\Projects\ecommerce_web_api\src\modules\users\user.service.js:3:28)
+    at register (D:\Web\6. Node js\MyLearning\Projects\ecommerce_web_api\src\modules\users\user.controller.js:6:37)
+    at Layer.handleRequest (D:\Web\6. Node js\MyLearning\Projects\ecommerce_web_api\node_modules\router\lib\layer.js:152:17)
+    at next (D:\Web\6. Node js\MyLearning\Projects\ecommerce_web_api\node_modules\router\lib\route.js:157:13)
+    at D:\Web\6. Node js\MyLearning\Projects\ecommerce_web_api\src\modules\users\user.middleware.js:16:9
+    at Layer.handleRequest (D:\Web\6. Node js\MyLearning\Projects\ecommerce_web_api\node_modules\router\lib\layer.js:152:17)
+    at next (D:\Web\6. Node js\MyLearning\Projects\ecommerce_web_api\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\Web\6. Node js\MyLearning\Projects\ecommerce_web_api\node_modules\router\lib\route.js:117:3)
+    at handle (D:\Web\6. Node js\MyLearning\Projects\ecommerce_web_api\node_modules\router\index.js:435:11)
+[2026-05-23 19:42:17] Error: Duplicate entry 'langofficial19+1@gmail.com' for key 'users.email'
+    at Object.register (D:\Web\6. Node js\MyLearning\Projects\ecommerce_web_api\src\modules\users\user.model.js:6:28)
+    at Object.register (D:\Web\6. Node js\MyLearning\Projects\ecommerce_web_api\src\modules\users\user.service.js:8:28)
+    at async register (D:\Web\6. Node js\MyLearning\Projects\ecommerce_web_api\src\modules\users\user.controller.js:6:19)
+[2026-05-24 10:21:00] Error: Invalid verification link
+    at Object.verifyEmail (D:\Web\6. Node js\MyLearning\Projects\ecommerce_web_api\src\modules\users\user.service.js:58:23)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async verifyEmail (D:\Web\6. Node js\MyLearning\Projects\ecommerce_web_api\src\modules\users\user.controller.js:39:21)
