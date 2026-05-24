@@ -2,5 +2,7 @@ node_modules/
 .env
 npm-debug.log
 .DS_Store
-logs/
 
+ # Ignore log files but keep the directory
+logs/*
+!logs/.gitkeep
