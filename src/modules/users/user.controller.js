@@ -106,6 +106,33 @@ const updateProfile = async (req, res) => {
     }
 };
 
+const forgotPassword = async (req, res) => {
+    try {
+        const { email } = req.validated;
+        const result = await userService.forgotPassword(email);
+
+        const message = result.emailSent
+            ? "Password reset OTP sent successfully. Please check your email."
+            : "We encountered an issue sending the email. Please try again later.";
+
+        return res.status(200).json({ success: true, message });
+    } catch (error) {
+        return await handleError(res, 'userController', error);
+    }
+};
+
+const resetPassword = async (req, res) => {
+    try {
+        await userService.resetPassword(req.validated);
+        return res.status(200).json({
+            success: true,
+            message: "Password reset successfully. You can now login with your new password."
+        });
+    } catch (error) {
+        return await handleError(res, 'userController', error);
+    }
+};
+
 module.exports = {
     register,
     verifyEmail,
@@ -114,5 +141,7 @@ module.exports = {
     getProfile,
     changePassword,
     deleteProfile,
-    updateProfile
+    updateProfile,
+    forgotPassword,
+    resetPassword
 };

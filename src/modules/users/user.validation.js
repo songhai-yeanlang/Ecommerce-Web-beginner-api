@@ -42,9 +42,31 @@ const changePasswordSchema = joi.object({
         })
 });
 
+const forgotPasswordSchema = joi.object({
+    email: joi.string().email().required()
+});
+
+const resetPasswordSchema = joi.object({
+    email: joi.string().email().required(),
+    otp: joi.string().length(6).required(),
+    newPassword: joi.string()
+        .min(8)
+        .max(30)
+        .pattern(new RegExp('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\\$%\\^&\\*])'))
+        .required()
+        .messages({
+            'string.min': 'new password must be at least 8 characters',
+            'string.max': 'new password must be at most 30 characters',
+            'string.pattern.base': 'new password must include uppercase, lowercase, number, and special character',
+            'any.required': 'new password is required'
+        })
+});
+
 module.exports = {
     registerUserSchema,
     resendVerificationSchema,
     loginUserSchema,
-    changePasswordSchema
+    changePasswordSchema,
+    forgotPasswordSchema,
+    resetPasswordSchema
 };

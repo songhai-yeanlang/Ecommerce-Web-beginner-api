@@ -240,6 +240,82 @@ const updateProfile = async (userId, data) => {
 
 }
 
+const forgotPassword = async (email) => {
+    const user = await userModel.findByEmail(email.toLowerCase());
+
+    if (!user) {
+        const error = new Error('User not found');
+        error.statusCode = 404;
+        throw error;
+    }
+
+    const otp = Math.floor(100000 + Math.random() * 900000).toString();
+    const tokenData = JSON.stringify({
+        otp,
+        expires: Date.now() + 3600000 // 1 hour
+    });
+
+    await userModel.updateToken(user.id, tokenData);
+
+    let emailSent = true;
+
+    try {
+        await userMailer.sendResetPasswordEmail({
+            to: user.email,
+            name: user.name,
+            otp
+        });
+    } catch (error) {
+        console.error(`[user.service] Failed to send reset password email to ${user.email}:`, error.message);
+        emailSent = false;
+    }
+
+    return { emailSent };
+};
+
+const resetPassword = async (data) => {
+    const { email, otp, newPassword } = data;
+    const user = await userModel.findByEmail(email.toLowerCase());
+
+    if (!user) {
+        const error = new Error('Invalid email or OTP');
+        error.statusCode = 400;
+        throw error;
+    }
+
+    const tokenRow = await userModel.findTokenById(user.id);
+    if (!tokenRow || !tokenRow.token) {
+        const error = new Error('Invalid or expired OTP');
+        error.statusCode = 400;
+        throw error;
+    }
+
+    let tokenData;
+    try {
+        tokenData = JSON.parse(tokenRow.token);
+    } catch (e) {
+        const error = new Error('Invalid or expired OTP');
+        error.statusCode = 400;
+        throw error;
+    }
+
+    if (tokenData.otp !== otp) {
+        const error = new Error('Invalid OTP');
+        error.statusCode = 400;
+        throw error;
+    }
+
+    if (Date.now() > tokenData.expires) {
+        const error = new Error('OTP has expired');
+        error.statusCode = 400;
+        throw error;
+    }
+
+    const hashPassword = await bcrypt.hash(newPassword, 10);
+    await userModel.updatePassword(user.id, hashPassword);
+    await userModel.updateToken(user.id, null);
+};
+
 module.exports = {
     register,
     verifyEmail,
@@ -248,5 +324,7 @@ module.exports = {
     getProfile,
     changePassword,
     deleteProfile,
-    updateProfile
+    updateProfile,
+    forgotPassword,
+    resetPassword
 };
